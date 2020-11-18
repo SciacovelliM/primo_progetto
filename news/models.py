@@ -6,10 +6,10 @@ class Giornalista (models.Model):
     cognome = models.CharField (max_length = 20) 
     
     def __str__ (self): 
-        return self.nome + - + self.cognome 
+        return self.nome + " " + self.cognome 
     
 class Articolo (models.Model): 
-    """ il modello generico di un articoto di news """
+    """ il modello generico di un articolo di news """
     titolo = models.CharField (max_length = 100) 
     contenuto = models.TextField () 
     giornalista = models.ForeignKey (Giornalista, on_delete = models.CASCADE, related_name = "articoli") 
