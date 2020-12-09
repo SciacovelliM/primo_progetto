@@ -1,0 +1,14 @@
+{% extends 'base.html'%} 
+{%block title%} 
+    Libreria
+{%endblock title%} 
+{%block content%} 
+    <h4>Articoli:</h4> 
+        {% for libro in object_list %} 
+            <p><strong>Titolo: </strong>{{ libro.titolo }}</p> 
+            <p><strong>Autore: </strong>{{ libro.autore }}</p>
+            <p><strong>Genere: </strong>{{ libro.genere }}</p>
+            <p><strong>ISBN: </strong>{{ libro.isbn }}</p>
+            <hr> 
+        {% endfor %}
+{%endblock content%}
