@@ -1,5 +1,4 @@
 """primo_progetto URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
@@ -15,11 +14,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from prima_app.views import homepage
+from prima_app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homepage,name='homepage'),
+    path('', index,name='index'),
     path('prima_app/', include('prima_app.urls')),
     path('seconda_app/', include('seconda_app.urls')),
+    path('news/', include('news.urls')),
+    #path('', home, name='homeview')
 ]
