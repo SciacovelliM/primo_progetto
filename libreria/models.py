@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Genere(models.Model):
     nome=models.CharField(max_length=20)
@@ -18,6 +19,9 @@ class Autore(models.Model):
 
     def _str_(self):
         return self.nome+" "+self.cognome
+
+    def get_absolute_url(self):
+        return reverse("profilo_autore", kwargs={"pk": self.pk})
 
     class Meta:
         verbose_name="Autore"

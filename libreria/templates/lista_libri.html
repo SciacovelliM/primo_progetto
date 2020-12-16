@@ -3,12 +3,13 @@
     Libreria
 {%endblock title%} 
 {%block content%} 
-    <h4>Articoli:</h4> 
+    <h4>Libreria:</h4>
+    <br>
         {% for libro in object_list %} 
             <p><strong>Titolo: </strong>{{ libro.titolo }}</p> 
-            <p><strong>Autore: </strong>{{ libro.autore }}</p>
-            <p><strong>Genere: </strong>{{ libro.genere }}</p>
+            <p><strong>Autore: </strong><a href="{{ libro.autore.get_absolute_url }}">{{ libro.autore }}</a></p>
+            <p><strong>Genere: </strong>{% for genere in libro.genere.all %}{{ genere }} {% endfor %}</p>
             <p><strong>ISBN: </strong>{{ libro.isbn }}</p>
-            <hr> 
+            <hr>
         {% endfor %}
 {%endblock content%}
