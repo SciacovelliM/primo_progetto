@@ -22,6 +22,7 @@ urlpatterns = [
     path('prima_app/', include('prima_app.urls')),
     path('seconda_app/', include('seconda_app.urls')),
     path('news/', include('news.urls')),
-    path('libreria/', include('libreria.urls'))
+    path('libreria/', include('libreria.urls')),
+    path('forms_app/', include('forms_app.urls'))
     #path('', home, name='homeview')
 ]
