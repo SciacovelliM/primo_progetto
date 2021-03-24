@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import FormContatto
+from django.http import HttpResponse
 # Create your views here.
 
 def contatti(request):
@@ -9,11 +10,12 @@ def contatti(request):
     if request.method == "POST": 
         form = FormContatto(request.POST) 
         if form.is_valid(): 
-            print("Il Form è Valido!") 
-            print("NOME: ", form.cleaned_data["nome"])
-            print ("COGNOME: ", form.cleaned_data ["cognome"])
-            print("EMAIL: ", form.cleaned_datal["email"])
-            print ("CONTENUTO: ", form.cleaned_data["contenuto"]) 
+            print("Salvo il contatto nel database")
+            nuovo_contato=form.save()
+            print(nuovo_contato.nome)
+            print (nuovo_contato.nomecognome)
+            print(nuovo_contato.nome.email)
+            print (nuovo_contato.nome.contenuto) 
             
             return HttpResponse("<h1>Grazie per averci contattato!</hl>")
         
