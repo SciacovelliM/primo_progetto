@@ -35,6 +35,10 @@ class Libro(models.Model):
 
     def _str_(self):
         return self.titolo
+    
+    def get_absolute_url(self):
+        return reverse("listaTuttiLibri")
+
 
     class Meta:
         verbose_name="Libro"
