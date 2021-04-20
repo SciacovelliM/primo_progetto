@@ -23,5 +23,5 @@ class FormContatto(forms.ModelForm):
         if "parola" in dati:
             raise ValidationError("Il contenuto inserito viola le norme del sito.")
         if len(dati)<20:
-            raisen ValidationError("Il contenuto inserito è troppo breve")
+            raise ValidationError("Il contenuto inserito è troppo breve")
         return dati
